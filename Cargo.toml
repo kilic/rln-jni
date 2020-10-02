@@ -1,0 +1,16 @@
+[package]
+name = "rlnandroid"
+version = "0.1.0"
+authors = ["kilic <kiliconu@itu.edu.tr>"]
+edition = "2018"
+
+[lib]
+# crate-type = ["lib", "staticlib"]
+crate-type = ["dylib"]
+
+[dependencies]
+rln = {package = "rln", path = "../rln", features = ["bench"] }
+
+
+[target.'cfg(target_os="android")'.dependencies]
+jni = { version = "0.5", default-features = false }
